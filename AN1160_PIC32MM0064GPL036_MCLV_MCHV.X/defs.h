@@ -157,63 +157,63 @@
     unsigned current_state:	  3;
     unsigned unused :   6;
 } TFlags;
-extern TFlags Flags;
+extern const TFlags Flags;
 
 //############## Clockwise and Counter-Clockwise rotation constants, majority detection filter, etc ####################
 
 /*override values for each sector*/
 extern const uint32_t PWM_STATE_CLKW[6];
-extern uint32_t PWM_STATE[6];
+extern const uint32_t PWM_STATE[6];
 
 /*ADC Channel AN Select*/
 extern const uint16_t ADC_CHANNEL_CLKW[6];
-extern uint16_t ADC_CHANNEL[6];
+extern const uint16_t ADC_CHANNEL[6];
 
 /*Motor Phases*/
 extern const uint32_t MotorPhaseAState_CLKW[6];
 extern const uint32_t MotorPhaseBState_CLKW[6];
 extern const uint32_t MotorPhaseCState_CLKW[6];
-extern uint32_t MotorPhaseAState[6];
-extern uint32_t MotorPhaseBState[6];
-extern uint32_t MotorPhaseCState[6];
+extern const uint32_t MotorPhaseAState[6];
+extern const uint32_t MotorPhaseBState[6];
+extern const uint32_t MotorPhaseCState[6];
 
 /*AND & OR operators for masking the active BEMF signal*/
 extern const uint16_t ADC_MASK_CLKW[6];
-extern uint16_t ADC_MASK[6];
+extern const uint16_t ADC_MASK[6];
 
 extern const uint16_t ADC_XOR_CLKW[6];
-extern uint16_t ADC_XOR[6];
+extern const uint16_t ADC_XOR[6];
 
 /*BEMF Majority Function Filter values*/
 extern const uint8_t ADC_BEMF_FILTER_CLKW[64];
-extern uint8_t ADC_BEMF_FILTER[64];
+extern const uint8_t ADC_BEMF_FILTER[64];
 
 //###################### Miscellaneous Variables and Defines ####################
-extern uint8_t ADCCommState;            // state for current motor sector
-extern uint8_t adcBackEMFFilter;        // stores value for each ADC filtering
-extern uint16_t Phase_Advance_Degrees;	// stores value for Phase Advance degrees. Modify it through DMCI
-extern uint16_t PhaseAdvanceTicks;  	// counter for ticks to be extracted out of Timer2 when commuting to add Phase Advance
-extern uint8_t BlankingCounter;         // blanking counter, for rejecting some values out of the filter
-extern uint32_t PIticks;                // counter for skipping PI calculation
-extern uint32_t stallCount;             // counter for stalling
-extern uint32_t RampDelay;              // variable used to create the startup ramp delay
+extern const uint8_t ADCCommState;            // state for current motor sector
+extern const uint8_t adcBackEMFFilter;        // stores value for each ADC filtering
+extern const uint16_t Phase_Advance_Degrees;	// stores value for Phase Advance degrees. Modify it through DMCI
+extern const uint16_t PhaseAdvanceTicks;  	// counter for ticks to be extracted out of Timer2 when commuting to add Phase Advance
+extern const uint8_t BlankingCounter;         // blanking counter, for rejecting some values out of the filter
+extern const uint32_t PIticks;                // counter for skipping PI calculation
+extern const uint32_t stallCount;             // counter for stalling
+extern const uint32_t RampDelay;              // variable used to create the startup ramp delay
 extern volatile int32_t delay_counter;	// used for delays. is incremented automaticalLy in MCPWM interrupt, each 50 us
-extern uint32_t MotorNeutralVoltage;	// Motor Neutral Voltage calculAtion
-extern uint32_t MotorPhaseA;			// Motor Phase A current voltage
-extern uint32_t MotorPhaseB;			// Motor Phase B current voltage
-extern uint32_t MotorPhaseC;			// Motor Phase C current voltage
-extern uint16_t ComparatorOutputs;
+extern const uint32_t MotorNeutralVoltage;	// Motor Neutral Voltage calculAtion
+extern const uint32_t MotorPhaseA;			// Motor Phase A current voltage
+extern const uint32_t MotorPhaseB;			// Motor Phase B current voltage
+extern const uint32_t MotorPhaseC;			// Motor Phase C current voltage
+extern const uint16_t ComparatorOutputs;
 
-extern uint32_t SCCP3Value;             //Used for calculating next commutation occurring
-extern uint32_t SCCP3Average;			//Used for calculating next commutation occurring
-extern uint32_t SCCP2Value;
+extern const uint32_t SCCP3Value;             //Used for calculating next commutation occurring
+extern const uint32_t SCCP3Average;			//Used for calculating next commutation occurring
+extern const uint32_t SCCP2Value;
 
-extern uint32_t CurrentSpeed, DesiredSpeed, DesiredRPM, CurrentDuty, DesiredDuty; 	//speed definitions
+extern const uint32_t CurrentSpeed, DesiredSpeed, DesiredRPM, CurrentDuty, DesiredDuty; 	//speed definitions
 
 //PI Controller definitions
-extern uint32_t SpeedControl_P;         // The P term for the PI speed control loop. Modify in defs.c
-extern uint32_t SpeedControl_I;         // The I term for the PI speed control loop. Modify in defs.c
-extern tPIParm PIDStructure;            // PID Structure
+extern const uint32_t SpeedControl_P;         // The P term for the PI speed control loop. Modify in defs.c
+extern const uint32_t SpeedControl_I;         // The I term for the PI speed control loop. Modify in defs.c
+extern const tPIParm PIDStructure;            // PID Structure
 
 void SpeedPILoopController(void);		// PI Loop Controller
 void OpenLoopController(void);			// Open Loop Controller

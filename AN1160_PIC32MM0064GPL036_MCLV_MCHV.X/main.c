@@ -117,6 +117,9 @@ int32_t main(void)
                 if(Flags.newCLKW != Flags.CLKW)
                     Flags.CLKW = Flags.newCLKW;
                 break;
+	    
+            default:
+		break;
         }
     }
     return 0;
